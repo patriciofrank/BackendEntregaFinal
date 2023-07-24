@@ -1,0 +1,14 @@
+{
+  "name": "backendfinal2",
+  "version": "1.0.0",
+  "description": "Backend proyect Stack MERN",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Patricio Frank",
+  "license": "ISC"
+}

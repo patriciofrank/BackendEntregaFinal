@@ -1,0 +1,30 @@
+<h2 class="my-4 mx-5">Registro</h2>
+<form id="register-form" class="mx-5">
+  <div class="form-group col-md-6">
+    <label for="first_name">First Name:</label>
+    <input type="text" class="form-control" id="first_name" name="first_name" required>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="last_name">Last Name:</label>
+    <input type="text" class="form-control" id="last_name" name="last_name" required>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="age">Age:</label>
+    <input type="number" class="form-control" id="age" name="age" required>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" id="password" name="password" required>
+  </div>
+  <div class="form-group col-md-6 my-3">
+    <button type="submit" class="btn btn-primary">Register</button>
+    <a href="http://localhost:8080/session/github" class="btn btn-secondary"><i class="bi bi-github me-1"></i>Register with Github </a>
+  </div>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script src="js/register.js"></script>
