@@ -1,7 +1,7 @@
 import { getManagerCarts } from "../dao/daoManager.js";
 import { getAvailableStock, updateStock } from "./product.services.js";
 import { ticketServices } from "./ticket.services.js";
-import { managerUser } from "./user.services.js";
+// import { managerUser } from "./user.services.js";
 
 const data = await getManagerCarts();
 export const managerCarts = new data.ManagerCartMongoDB;
@@ -14,9 +14,9 @@ export const cartServices = {
       const cart = await managerCarts.model.findById(cid).populate("products.product");
       if (!cart) throw new Error("Cart not found");
 
-      // Buscar el usuario de ese carrito
-      const user = await managerUser.getElementByIdCart(cid);
-      if (!user) throw new Error("User not found");
+      // // Buscar el usuario de ese carrito
+      // const user = await managerUser.getElementByIdCart(cid);
+      // if (!user) throw new Error("User not found");
 
       // Variables para guardar los productos que no pudieron procesarse
       let failedProducts = [];
@@ -58,7 +58,6 @@ export const cartServices = {
         code: "TKT" + Date.now(),
         purchase_datetime: new Date(),
         amount: amount,
-        purchaser: user.email
       };
       await ticketServices.createTicket(ticket);
 

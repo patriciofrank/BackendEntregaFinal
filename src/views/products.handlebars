@@ -1,0 +1,35 @@
+<div>
+  <p>Nombre: {{user.first_name}}</p>
+  <script id="user-template" type="text/x-handlebars-template">
+    <p>Nombre: {{user.first_name}} {{user.last_name}}</p>
+  </script>
+  <h1>Lista de Productos</h1>
+
+  <form>
+    <label for="limit">Mostrar:</label>
+    <select id="limit" name="limit">
+      <option value="3">3</option>
+      <option value="6">6</option>
+      <option value="9">9</option>
+    </select>
+
+    <label for="sort">Ordenar por:</label>
+    <select id="sort" name="sort">
+      <option value="1">Precio ascendente</option>
+      <option value="-1">Precio descendente</option>
+    </select>
+  </form>
+
+  <div id="products-container"></div>
+
+ 
+
+  <div id="products-template" type="text/x-handlebars-template">
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.js"
+    integrity="sha512-rwu37NnL8piEGiFhe2c5j4GahN+gFsIn9k/0hkRY44iz0pc81tBNaUN56qF8X4fy+5pgAAgYi2C9FXdetne5sQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script type="module" src="js/products.js"></script>
+</div>

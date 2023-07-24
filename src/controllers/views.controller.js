@@ -1,7 +1,7 @@
-import { productControler } from "./product.controller.js";
+import { productController } from "./product.controller.js";
 
 const productsGetAll = async (req, res) => {
-    const products = await productControler.getAllProducts();
+    const products = await productController.getAllProducts();
     res.render('home', {
         products
     });
