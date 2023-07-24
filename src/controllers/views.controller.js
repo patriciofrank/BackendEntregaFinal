@@ -1,40 +1,40 @@
 import { productController } from "./product.controller.js";
 
-const productsGetAll = async (req, res) => {
+export const productsGetAll = async (req, res) => {
     const products = await productController.getAllProducts();
     res.render('home', {
         products
     });
 }
 
-const realtimeProducts = (req, res) => {
+export const realtimeProducts = (req, res) => {
     res.render('realtimeProducts', {})
 };
 
 // ------------------------------------------------------------------
 
-const login = (req, res) => {
+export const login = (req, res) => {
     res.render('login',{});
 };
 
-const register = (req, res) => {
+export const register = (req, res) => {
     res.render('register',{});
 };
 
 
-const products = async (req, res) => {
+export const products = async (req, res) => {
     res.render('products', {
         
     });
 };
 
-const chat = async (req, res, next) => {
+export const chat = async (req, res, next) => {
     res.render('message', {
     });
 }
 
 
-const info = (req, res) => {
+export const info = (req, res) => {
     res.json({
         server: {
             name: process.title,
@@ -48,12 +48,3 @@ const info = (req, res) => {
     })
 };
 
-export default {
-    productsGetAll,
-    realtimeProducts,
-    login,
-    register,
-    products,
-    chat,
-    info
-}

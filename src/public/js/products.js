@@ -36,7 +36,7 @@ function renderUser(user) {
 
 
 function fetchProducts() {
-  const url = `http://localhost:8080/api/products?limit=${limit}&page=${page}&sort=${sort}&category=${category}`;
+  const url = `http://localhost:3000/api/products?limit=${limit}&page=${page}&sort=${sort}&category=${category}`;
   fetch(url)
     .then(response => response.json())
     .then(data => {

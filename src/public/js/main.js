@@ -1,6 +1,6 @@
 const socket = io();
 const productForm = document.getElementById('productForm');
-const url = 'http://localhost:8080/api/products'
+const url = 'http://localhost:3000/api/products'
 
 socket.emit('mensaje', "Hola me estoy conectando")
 

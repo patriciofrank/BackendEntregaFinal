@@ -1,27 +1,27 @@
 import { Router } from "express";
-import viewsController from "../controllers/views.controller.js";
+import {login,products,realtimeProducts,register,info} from "../controllers/views.controller.js";
 
 const routerView = Router();
 
 // ------------------------------------------------
 
 
-routerView.get('/', viewsController.login);
+routerView.get('api/', login);
 
-routerView.get('/realtimeProducts', viewsController.realtimeProducts);
+routerView.get('api/realtimeProducts', realtimeProducts );
 
 // ------------------------------------------------
 
 
-routerView.get('/login', viewsController.login);
+routerView.get('api/login', login);
 
 
-routerView.get('/register', viewsController.register );
+routerView.get('api/register', register );
 
 
-routerView.get('/products', viewsController.products);
+routerView.get('api/products', products);
 
 
-routerView.get('/info', viewsController.info);
+routerView.get('api/info', info);
 
 export default routerView;

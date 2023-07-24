@@ -9,7 +9,7 @@ if(loginForm){
     formData.forEach((value, key) => requestData[key] = value);
 
     try {
-      const response = await fetch('http://localhost:8080/api/session/login', {
+      const response = await fetch('http://localhost:3000/api/session/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

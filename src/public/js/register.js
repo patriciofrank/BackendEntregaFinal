@@ -7,7 +7,7 @@ registerForm.addEventListener('submit', async (event) => {
   formData.forEach((value, key) => requestData[key] = value);
 
   try {
-    const response = await fetch('http://localhost:8080/api/session/register', {
+    const response = await fetch('http://localhost:3000/api/session/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

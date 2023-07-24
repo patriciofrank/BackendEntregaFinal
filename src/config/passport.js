@@ -135,7 +135,6 @@ const initializePassport = () => {
             return done(error)
         }
     }))
-
 }
 
 export default initializePassport
