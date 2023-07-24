@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import config from "../config/config.js";
 
 dotenv.config({
-  path: config.environment === "PRODUCTION" ? './.env.production' : './.env.development'
+  path: './.env'
 });
 
 const customLevelsOptions = {

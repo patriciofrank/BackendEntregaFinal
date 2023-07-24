@@ -6,7 +6,6 @@ dotenv.config({
 })
 
 export default {
-    environment: environment,
     port: process.env.PORT,
     mongoURL: process.env.MONGODBURL,
     selectedDB: process.env.SELECTEDDB,

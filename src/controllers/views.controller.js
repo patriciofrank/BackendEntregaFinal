@@ -1,4 +1,4 @@
-import { productControler } from "./productControler.js";
+import { productControler } from "./product.controller.js";
 
 const productsGetAll = async (req, res) => {
     const products = await productControler.getAllProducts();

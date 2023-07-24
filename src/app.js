@@ -18,7 +18,7 @@ import initializePassport from './config/passport.js'
 import router from './routes/routes.js';
 import compression from 'express-compression';
 import errorHandler from './middlewares/errors/index.js';
-import { productsMocks } from './mocks/faker-products.js';
+// import { productsMocks } from './mocks/faker-products.js';
 import { addProducts } from './services/product.services.js';
 import { addLogger } from './utils/logger.js';
 import { generateResetToken, isTokenExpired } from './services/password.services.js';
@@ -82,16 +82,16 @@ app.use('/', router)
 app.use('/', express.static(__dirname + '/public'));
 
 //Ruta para generar 100 productos con mocks
-app.get('/mockingproducts', async (req, res) => {
-  try {
-    const products = productsMocks
-    // console.log(products);
-    await addProducts(products);
-    res.send("Productos agregados Mocks")
-  } catch (error) {
-    res.send(error);
-  }
-})
+// app.get('/mockingproducts', async (req, res) => {
+//   try {
+//     const products = productsMocks
+//     // console.log(products);
+//     await addProducts(products);
+//     res.send("Productos agregados Mocks")
+//   } catch (error) {
+//     res.send(error);
+//   }
+// })
 
 //Swagger
 const swaggerOptions = {
