@@ -1,0 +1,148 @@
+paths: 
+  /api/products:
+    get:
+      summary: "Search all products" 
+      tags: 
+        - "Product"
+      responses:
+        "200":
+          description: "Products"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+        "500":
+          description: "Error.message"
+    post:
+      summary: "Add a new product" 
+      tags: 
+        - "Product"
+      requestBody:
+        $ref: "#/components/requestBodies/addProduct"
+      responses:
+        "201":
+          description: "Producto creado correctamente"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "500":
+          description: "Error.message"
+
+  /api/products/{pid}:
+    get:
+      summary: "Search product by id" 
+      tags: 
+        - "Product"
+      parameters:
+        - in: path
+          name: pid
+          schema:
+            type: string
+          required: true
+          description: "Product id"
+      responses:
+        "200":
+          description: "Product"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "500":
+          description: "Internal server error"
+    put:
+      summary: "Update product by id" 
+      tags: 
+        - "Product"
+      parameters:
+        - in: path
+          name: pid
+          schema:
+            type: string
+          required: true
+          description: "Product id"
+      requestBody:
+        $ref: "#/components/requestBodies/updateProduct"
+      responses:
+        "200":
+          description: "Product"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "404":
+          description: "Producto not found"
+        "500":
+          description: "Internal server error"
+    delete:
+      summary: "Delete product by id" 
+      tags: 
+        - "Product"
+      parameters:
+        - in: path
+          name: pid
+          schema:
+            type: string
+          required: true
+          description: "Product id"
+      responses:
+        "200":
+          description: "Product"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "404":
+          description: "Producto not found"
+        "500":
+          description: "Internal server error"
+                
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        _id:
+          type: string
+          required: true
+        title:
+          type: string
+          required: true
+        description:
+          type: string
+          required: true
+        price:
+          type: number
+          required: true
+          format: float
+        thumbnail:
+          type: string
+          required: true
+        code:
+          type: string
+          required: true
+        stock:
+          type: number
+          required: true
+          format: float
+        owner:
+          type: string
+      example:
+        _id: "asd123"
+        title: "Producto 1"
+        description: "Descripción del producto 1"
+        price: 100
+        thumbnail: "img/BAbsolution.webp"
+        code: "1234"
+        stock: 10
+        owner: "creador"
+
+  requestBodies:
+    updateProduct:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Product"
+      required: true

@@ -132,7 +132,7 @@ app.get('/deleteCookie', (req, res) => {
 app.get('/', async (req, res) => {
   const products = await productManager.getProducts();
 
-  res.render('index', {
+  res.render('products', {
     products
   });
 })
