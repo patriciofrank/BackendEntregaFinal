@@ -10,7 +10,7 @@ TIEMPO LIMITE 27/07/2023
 
 **Para ejecutar comando: node server.js**  
 **Posibilidad de configurar por comando el puerto de ejecución del servidor:**  
-**node server.js --serverPort 8181 o node server.js -p 8181**  
+**node server.js --serverPort 3000 o node server.js -p 3000**  
     
 ##Importante se suve .env solo a modo didactico para poder probar la funcionalidad.  
 ##Quedan expuestos valores privados como usuarios, contraseñas, rutas y private-keys.  
